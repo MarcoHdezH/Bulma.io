@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.min.css">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <div class="container has-text-centered p-5">
+        <h1 class="title is-1">Asociación Veterinaria de Reptiles y Anfibios</h1>
+        <h2 class="subtitle is-2">Reporte Clínico</h2>
+    </div>
+
+    <div class="container">
+        <form class="container m-4">
+            <!-- Datos Generales -->
+            <fieldset class="is-bordered has-background-light p-5">
+                <legend class="content is-medium m-0 has-text-weight-bold is-uppercase has-text-centered">Datos
+                    Generales</legend>
+
+                <div class="columns"> <!-- Fecha y Número de Caso-->
+                    <div class="field column">
+                        <label for="fecha" class="label is-uppercase">Fecha:</label>
+                        <div class="control">
+                            <input class="input" type="date" id="fecha" name="fecha">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label for="numero-caso" class="label is-uppercase">Caso #:</label>
+                        <div class="control">
+                            <input class="input" type="number" min="1" id="numero-caso" name="numero-caso"
+                                placeholder="Ejemplo : 102122">
+                        </div>
+                    </div>
+                </div> <!-- Fin de Fecha y Número de Caso-->
+
+                <div class="columns"> <!-- Inicio Nombre Veterinario y Duracion de Necropsia-->
+
+                    <div class="field column">
+                        <label for="nombre-veterinario" class="label is-uppercase">Veterinario que Examina:</label>
+                        <div class="control">
+                            <input class="input" id="nombre-veterinario" name="nombre-veterinario" type="text"
+                                placeholder="Nombre de Veterinario">
+                        </div>
+                    </div>
+                    <div class="field column">
+                        <label class="label has-text-centered is-uppercase">Duración de Necropsia:</label>
+                        <div class="control columns pt-3">
+                            <input id="inicio-necropsia" name="inicio-necropsia" class="input column has-text-centered"
+                                placeholder="Inicio" type="date">
+                            <input id="fin-necropsia" name="fin-necropsia" class="input column has-text-centered "
+                                placeholder="Fin" type="date">
+                        </div>
+                    </div>
+                </div> <!-- Fin Nombre Veterinario y Duracion de Necropsia-->
+
+            </fieldset> <!-- Fin de Datos Generales-->
+
+            <!-- Datos del Ejemplar -->
+            <fieldset class="is-bordered has-background-light p-5 mt-6">
+                <legend class="content is-medium m-0 has-text-weight-bold is-uppercase has-text-centered">Datos del
+                    Ejemplar</legend>
+
+                <div class="columns"> <!-- Inicio Orden y Sexo del Animal -->
+                    <div class="field column">
+                        <label for="orden" class="label is-uppercase">Orden del Ejemplar:</label>
+                        <div class="control">
+                            <input id="orden" name="orden" class="input" type="text"
+                                placeholder="Ejemplo: Primates, Carnivoro, Cocodrilia">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label for="sexo" class="label is-uppercase">Sexo del Ejemplar:</label>
+                        <div class="control">
+                            <input id="sexo" name="sexo" placeholder="Macho - Hembra" class="input" type="text">
+                        </div>
+                    </div>
+                </div> <!-- Fin Orden y Sexo del Animal -->
+
+                <div class="columns"> <!-- Inicio Familia y Edad del Ejemplar-->
+                    <div class="field column">
+                        <label for="familia" class="label is-uppercase">Familia del Ejemplar:</label>
+                        <div class="control">
+                            <input id="familia" name="familia" placeholder="Ejemplo: Artrópodos " class="input"
+                                type="text">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label for="edad" class="label is-uppercase">Edad del Ejemplar:</label>
+                        <div class="control">
+                            <input id="edad" name="edad" placeholder="Ejemplo: 10" min="1" class="input" type="number">
+                        </div>
+                    </div>
+                </div> <!-- Fin Familia y Edad del Ejemplar -->
+
+                <div class="columns"> <!-- Inicio Especie e Identificacion del Ejemplar-->
+                    <div class="field column">
+                        <label for="especie" class="label is-uppercase">Especie del Ejemplar:</label>
+                        <div class="control">
+                            <input id="especie" name="especie" placeholder="Ejemplo: Ave, Reptil" class="input"
+                                type="text">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label for="identificacion" class="label is-uppercase">Identificación:</label>
+                        <div class="control">
+                            <input id="identificacion" name="identificacion" class="input" type="text">
+                        </div>
+                    </div>
+                </div> <!-- Fin de Especi e Identifiacion del Ejemplar-->
+
+                <div class="mb-5"> <!-- Inicio Historia Medica -->
+                    <label for="historia-medica" class="label is-uppercase">Historia Médica:</label>
+                    <textarea id="historia-medica" name="historia-medica" placeholder="Escribir Aquí"
+                        class="textarea"></textarea>
+                </div> <!-- Fin de Historia Medica -->
+
+                <div class="mb-5"> <!-- Inicio Hallazgos-->
+                    <label for="hallazgos" class="label is-uppercase">Hallazgos en el Encierro:</label>
+                    <textarea id="hallazgos" name="hallazgos" placeholder="Escribir Aquí" class="textarea"></textarea>
+                </div> <!-- Fin de Hallazgos -->
+
+                <div class="columns"> <!-- Fecha de Muerte y Preservacion-->
+                    <div class="field column">
+                        <label class="label is-uppercase">Fecha de Muerte:</label>
+                        <div class="control">
+                            <input class="input" type="date">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label class="label is-uppercase">Preservación:</label>
+                        <div class="control">
+                            <label class="radio is-uppercase">
+                                <input type="radio" name="answer">
+                                Si
+                            </label>
+                            <label class="radio is-uppercase">
+                                <input type="radio" name="answer">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div> <!-- Fin de Fecha de Muerte y Preservacion -->
+
+                <div class="columns"> <!-- Estado de Descomposición y Tipo de Preservación-->
+                    <div class="field column">
+                        <label for="descomposicion" class="label is-uppercase">Estado de Descomposición:</label>
+                        <div class="control">
+                            <input id="descomposicion" name="descomposicion" placeholder="Escribir Estado" class="input"
+                                type="text">
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <label for="tipo-preservacion" class="label is-uppercase">Tipo de Preservación:</label>
+                        <div class="control">
+                            <input id="tipo-preservacion" name="tipo-preservacion"
+                                placeholder="Escribir Tipo de Preservacion" class="input" type="text">
+                        </div>
+                    </div>
+                </div> <!-- Fin de Descomposición y Tipo de Preservacion -->
+
+                <div class="columns"> <!-- Rigidez, T Rectal y Evidencia Entopmologica -->
+                    <div class="field column">
+                        <div class="column">
+                            <div class="is-block">
+                                <label for="rigidez" class="label is-uppercase">Rigidez:</label>
+                                <div class="control">
+                                    <input id="rigidez" name="rigidez" placeholder="Escribir Estado de Rigidez"
+                                        class="input" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="is-block">
+                                <label for="rectal" class="label is-uppercase">Tº Rectal:</label>
+                                <div class="control">
+                                    <input id="rectal" name="rectal" placeholder="Escribir Estado Rectal" class="input"
+                                        type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field column"> <!-- Inicio Hallazgos-->
+                        <label for="entomologia" class="label is-uppercase">Evidencia Entomológica:</label>
+                        <textarea id="entomologia" name="entomologia" placeholder="Escribir Aquí"
+                            class="textarea"></textarea>
+                    </div> <!-- Fin de Hallazgos -->
+
+                </div> <!-- Fin Rigidez, T recual y Evidencia Entomologica -->
+
+                <div class="columns"> <!-- Apariencia Fisica -->
+                    <div class="field column">
+                        <label class="label is-uppercase">Apariencia Física:</label>
+                        <div class="control">
+                            <div class="is-block p-2">
+                                <label class="radio is-uppercase">
+                                    <input type="radio" name="answer"> Emaciado 1/5
+                                </label>
+                            </div>
+                            <div class="is-block p-2">
+                                <label class="radio is-uppercase">
+                                    <input type="radio" name="answer"> Delgado 2/5
+                                </label>
+                            </div>
+                            <div class="is-block p-2">
+                                <label class="radio is-uppercase">
+                                    <input type="radio" name="answer"> Ideal 3/5
+                                </label>
+                            </div>
+                            <div class="is-block p-2">
+                                <label class="radio is-uppercase">
+                                    <input type="radio" name="answer"> Sobrepeso 4/5
+                                </label>
+                            </div>
+                            <div class="is-block p-2">
+                                <label class="radio is-uppercase">
+                                    <input type="radio" name="answer"> Obesidad Mórbida 5/5
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field column">
+                        <div>
+                            <label for="peso" class="label is-uppercase">Peso (Kg):</label>
+                            <div class="control">
+                                <input class="input" id="peso" name="peso" type="number" placeholder="45 Kg">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="longitud" class="label is-uppercase">Longitud (cm):</label>
+                            <div class="control">
+                                <input id="longitud" name="longitud" class="input" type="number" placeholder="45 cm">
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- Fin de Apariencia Fisica -->
+
+            </fieldset> <!--Fin de Datos Generales del Animal-->
+
+            <fieldset class="is-bordered has-background-light p-5 mt-6"> <!-- Inicio Inspeccion Externa-->
+                <legend class="content is-medium m-0 has-text-weight-bold is-uppercase has-text-centered">Inspección
+                    Externa</legend>
+
+                <div class="field">
+                    <label for="condicion-piel" class="label is-uppercase">Condiciones de la Piel:</label>
+                    <textarea id="condicion-piel" name="condicion-piel"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-cabeza-externa" class="label is-uppercase">Cabeza:</label>
+                    <textarea id="condicion-cabeza-externa" name="condicion-cabeza-externa"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-tronco" class="label is-uppercase">Tronco:</label>
+                    <textarea id="condicion-tronco" name="condicion-tronco"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-patas" class="label is-uppercase">Patas:</label>
+                    <textarea id="condicion-patas" name="condicion-patas"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-cola" class="label is-uppercase">Cola:</label>
+                    <textarea id="condicion-cola" name="condicion-cola"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="evidencia-intervencion" class="label is-uppercase">Evidencias de intervención médica o
+                        quirúrgica</label>
+                    <textarea id="evidencia-intervencion" name="evidencia-intervencion" placeholder="Sin Evidencias"
+                        class="textarea"></textarea>
+                </div>
+
+            </fieldset> <!-- Fin de Inspeccion Externa-->
+
+            <fieldset class="is-bordered has-background-light p-5 mt-6"> <!-- Inicio Inspeccion Interna-->
+                <legend class="content is-medium m-0 has-text-weight-bold is-uppercase has-text-centered">Inspección
+                    Interna</legend>
+
+                <div class="field">
+                    <label for="condicion-cabeza-interna" class="label is-uppercase">Cabeza:</label>
+                    <textarea id="condicion-cabeza-interna" name="condicion-cabeza-interna"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-cuello" class="label is-uppercase">Cuello:</label>
+                    <textarea id="condicion-cuello" name="condicion-cuello"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="S-MusculoEsq" class="label is-uppercase">Sistema MusculoEsquelético:</label>
+                    <textarea id="S-MusculoEsq" name="S-MusculoEsq"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-CavidadCelomica" class="label is-uppercase">Cavidad Celomica:</label>
+                    <textarea id="condicion-CavidadCelomica" name="condicion-CavidadCelomica"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="condicion-SistemaRespiratorio" class="label is-uppercase">Sistema Respiratorio:</label>
+                    <textarea id="condicion-SistemaRespiratorio" name="condicion-SistemaRespiratorio"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="evidencia-CardivoVascular" class="label is-uppercase">Sistema CardioVascular:</label>
+                    <textarea id="evidencia-CardivoVascular" name="evidenDigestivoascular"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="evidencia-Digestivo" class="label is-uppercase">Sistema Digestivo:</label>
+                    <textarea id="evidencia-Digestivo" name="evidencia-Digestivo"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="columns">
+                    <div class="field column">
+                        <label for="Condicion-Higado" class="label is-uppercase">Higado y Vesicula Biliar:</label>
+                        <textarea id="Codicion-Higado" name="Condicion-Higado"
+                            placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                    </div>
+
+                    <div class="field column">
+                        <label for="Condicion-Bazo" class="label is-uppercase">Bazo y Páncreas:</label>
+                        <textarea id="Condicion-Bazo" name="Condicion-Bazo"
+                            placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <label for="Condicion-Genitourinario" class="label is-uppercase">Sistema Genitourinario:</label>
+                    <textarea id="Condicion-Genitourinario" name="Condicion-Genitourinario"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="Condicion-Endrocrino" class="label is-uppercase">Sistema Endocrino:</label>
+                    <textarea id="Condicion-Endrocrino" name="Condicion-Endrocrino"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="Condicion-Nervioso" class="label is-uppercase">Sistema Nervioso:</label>
+                    <textarea id="Condicion-Nervioso" name="Condicion-Nervioso"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+            </fieldset> <!-- Fin de Inspeccion Interna-->
+
+            <fieldset class="is-bordered has-background-light p-5 mt-6"> <!-- Inicio Conclusiones-->
+                <legend class="content is-medium m-0 has-text-weight-bold is-uppercase has-text-centered">Conclusiones
+                </legend>
+                <div class="field">
+                    <label for="Complementarios" class="label is-uppercase">Exámenes Complementarios:</label>
+                    <textarea id="Complementarios" name="Complementarios"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="Adicionales" class="label is-uppercase">Comentarios Adicionales:</label>
+                    <textarea id="Adicionales" name="Adicionales" placeholder="Sin cambios patológicos aparentes (SCPA)"
+                        class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="DX-Morfologico" class="label is-uppercase">DX Morfológico:</label>
+                    <textarea id="DX-Morfologico" name="DX-Morfologico"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="DX-Definitivo" class="label is-uppercase">DX Definitivo:</label>
+                    <textarea id="DX-Definitivo" name="DX-Definitivo"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="Finalidad-Cadaver" class="label is-uppercase">Finalidad del Cadaver:</label>
+                    <textarea id="Finalidad-Cadaver" name="Finalidad-Cadaver"
+                        placeholder="Sin cambios patológicos aparentes (SCPA)" class="textarea"></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="Fotografia" class="label is-uppercase">Registro Fotográfico:</label>
+                    <div class="file">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="Fotografia" id="Fotografia">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Subir Fotografia
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </fieldset> <!-- Fin de Inspeccion Interna-->
+
+            <div class="field mt-6">
+                <div class="control">
+                    <button class="button is-link">guardar Registro</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
